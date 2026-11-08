@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EMAR Trading | Australian Online Retailer</title>
+  <meta name="description" content="EMAR Trading is a family-run Australian online retailer. We buy from brands and their authorised Australian distributors and sell to customers across Australia.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Crect width='30' height='30' rx='7' fill='%230f2a43'/%3E%3Crect x='7.5' y='8' width='15' height='2.2' rx='1.1' fill='white'/%3E%3Crect x='7.5' y='14' width='9' height='2.2' rx='1.1' fill='white'/%3E%3Crect x='18' y='11.5' width='4.5' height='4.7' rx='1' fill='%23d2a868'/%3E%3Crect x='7.5' y='20' width='15' height='2.2' rx='1.1' fill='white'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0f2a43;
+      --navy-2: #1b3d5c;
+      --accent: #8a6430;
+      --text: #1d2733;
+      --muted: #5b6876;
+      --line: #e3e8ee;
+      --soft: #f5f7fa;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--text);
+      font: 16px/1.65 "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+    /* Header */
+    header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,0.96); border-bottom: 1px solid var(--line); }
+    header .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .brand-mark { width: 32px; height: 32px; border-radius: 6px; background: var(--navy); display: grid; place-items: center; }
+    .brand-name { font-weight: 700; font-size: 18px; color: var(--navy); letter-spacing: 0.05em; }
+    .brand-sub { font-weight: 400; color: var(--muted); letter-spacing: 0.01em; }
+    nav { display: flex; align-items: center; gap: 28px; }
+    nav a { text-decoration: none; font-size: 15px; font-weight: 500; color: var(--muted); }
+    nav a:hover { color: var(--navy); }
+    nav a.nav-cta { color: var(--white); background: var(--navy); padding: 9px 16px; border-radius: 6px; }
+    nav a.nav-cta:hover { background: var(--navy-2); color: var(--white); }
+
+    /* Hero */
+    .hero { position: relative; overflow: hidden; background: linear-gradient(180deg, var(--soft) 0%, var(--white) 100%); padding: 104px 0 96px; border-bottom: 1px solid var(--line); }
+    .hero .wrap { position: relative; z-index: 1; }
+    .hero-art { position: absolute; top: 50%; right: max(24px, calc((100% - 1080px) / 2 + 24px)); width: 280px; height: 280px; transform: translateY(-50%) rotate(-6deg); pointer-events: none; }
+    .eyebrow { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+    .hero h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.1; letter-spacing: -0.02em; color: var(--navy); margin: 0 0 22px; max-width: 20ch; }
+    .hero p.lead { font-size: 19px; color: var(--muted); margin: 0 0 14px; max-width: 54ch; }
+    .hero p.lead:last-child { margin-bottom: 0; }
+    .btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 15px; padding: 13px 22px; border-radius: 6px; }
+    .btn-primary { background: var(--navy); color: var(--white); }
+    .btn-primary:hover { background: var(--navy-2); }
+
+    /* Sections */
+    section { padding: 80px 0; scroll-margin-top: 68px; }
+    section.alt { background: var(--soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .section-head { max-width: 640px; margin-bottom: 40px; }
+    .section-head h2 { font-size: 30px; line-height: 1.2; letter-spacing: -0.015em; color: var(--navy); margin: 0 0 12px; }
+    .section-head p { color: var(--muted); margin: 0; font-size: 17px; }
+
+    .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .card { background: var(--white); border: 1px solid var(--line); border-radius: 10px; padding: 26px; display: flex; gap: 18px; }
+    .icon { flex: none; width: 42px; height: 42px; border-radius: 8px; background: #f6ecdc; display: grid; place-items: center; color: #a87b3a; }
+    .card h3 { font-size: 17px; color: var(--navy); margin: 0 0 6px; }
+    .card p { margin: 0; color: var(--muted); font-size: 15px; }
+
+    /* Contact */
+    .contact { background: var(--navy); color: var(--white); }
+    .contact .wrap { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: start; }
+    .contact h2 { font-size: 30px; letter-spacing: -0.015em; margin: 0 0 12px; }
+    .contact p { color: #c4d1de; margin: 0 0 28px; font-size: 17px; }
+    .contact .btn-primary { background: var(--white); color: var(--navy); }
+    .contact .btn-primary:hover { background: #e9eef4; }
+    .details { border-top: 1px solid rgba(255,255,255,0.18); }
+    .detail { display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.18); font-size: 15px; }
+    .detail span:first-child { color: #9fb2c5; }
+    .detail a { color: var(--white); }
+
+    footer { background: #0b2135; color: #8fa3b8; font-size: 14px; }
+    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-top: 22px; padding-bottom: 22px; }
+
+    @media (max-width: 1100px) {
+      .hero-art { display: none; }
+    }
+    @media (max-width: 880px) {
+      .contact .wrap { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 640px) {
+      .wrap { padding: 0 16px; }
+      .hero { padding: 64px 0 60px; }
+      section { padding: 56px 0; }
+      .cards { grid-template-columns: 1fr; }
+      .card { padding: 22px; }
+      .detail { grid-template-columns: 1fr; gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <a class="brand" href="#">
+        <svg width="32" height="32" viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="7" fill="#0f2a43"/><rect x="7.5" y="8" width="15" height="2.2" rx="1.1" fill="#fff"/><rect x="7.5" y="14" width="9" height="2.2" rx="1.1" fill="#fff"/><rect x="18" y="11.5" width="4.5" height="4.7" rx="1" fill="#d2a868"/><rect x="7.5" y="20" width="15" height="2.2" rx="1.1" fill="#fff"/></svg>
+        <span class="brand-name">EMAR <span class="brand-sub">Trading</span></span>
+      </a>
+      <nav>
+        <a class="nav-cta" href="#contact">Contact us</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero" id="about">
+    <svg class="hero-art" viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="7" fill="#0f2a43" opacity="0.045"/><rect x="7.5" y="8" width="15" height="2.2" rx="1.1" fill="#fff"/><rect x="7.5" y="14" width="9" height="2.2" rx="1.1" fill="#fff"/><rect x="18" y="11.5" width="4.5" height="4.7" rx="1" fill="#d2a868" opacity="0.55"/><rect x="7.5" y="20" width="15" height="2.2" rx="1.1" fill="#fff"/></svg>
+    <div class="wrap">
+      <span class="eyebrow">For brands and suppliers</span>
+      <h1>Australian online retail for established brands</h1>
+      <p class="lead">EMAR Trading is a family-run online retailer based in Sydney. We buy from brands and their authorised Australian distributors, and sell their products to customers across Australia.</p>
+    </div>
+  </div>
+
+  <section class="alt" id="suppliers">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Working with brands and suppliers</h2>
+        <p>We are looking for long-term trade relationships with Australian brands, distributors and wholesalers.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <div>
+            <h3>Genuine stock only</h3>
+            <p>We buy only from brands and their authorised Australian suppliers. No grey-market or parallel imports.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></div>
+          <div>
+            <h3>Pricing respected</h3>
+            <p>We sell at the recommended retail price and follow your pricing and brand guidelines.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h10M7 17h6"/></svg></div>
+          <div>
+            <h3>Accurate listings, good service</h3>
+            <p>Correct product information and images, and prompt answers to customer questions.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div>
+            <h3>Easy to deal with</h3>
+            <p>A registered Australian business with a single point of contact, paying on agreed terms.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div>
+        <h2>Get in touch</h2>
+        <p>If you are a brand, distributor or wholesaler and would like to discuss a trade account, we would be glad to hear from you.</p>
+        <a class="btn btn-primary" href="mailto:info@emartrading.com.au">Email us</a>
+      </div>
+      <div class="details">
+        <div class="detail"><span>Email</span><span><a href="mailto:info@emartrading.com.au">info@emartrading.com.au</a></span></div>
+        <div class="detail"><span>Business</span><span>EMAR Trading, ABN 44 270 597 964</span></div>
+        <div class="detail"><span>Location</span><span>Sydney, NSW</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span>&copy; 2026 EMAR Trading</span>
+      <span>ABN 44 270 597 964 &middot; Sydney, NSW</span>
+    </div>
+  </footer>
+</body>
+</html>
